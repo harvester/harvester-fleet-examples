@@ -1,0 +1,19 @@
+apiVersion: harvesterhci.io/v1beta1
+kind: VirtualMachineImage
+metadata:
+  annotations:
+    harvesterhci.io/storageClassName: harvester-longhorn
+  name: opensuse-leap-155
+  labels:
+    harvesterhci.io/image-type: raw_qcow2
+    harvesterhci.io/imageDisplayName: "opensuse-leap-15.5"
+    harvesterhci.io/os-type: openSUSE
+  namespace: default
+spec:
+  checksum: ""
+  displayName: opensuse
+  pvcName: ""
+  pvcNamespace: ""
+  retry: 3
+  sourceType: download
+  url: https://download.opensuse.org/repositories/Cloud:/Images:/Leap_15.5/images/openSUSE-Leap-15.5.x86_64-NoCloud.qcow2

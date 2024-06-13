@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    harvesterhci.io/cloud-init-template: user
+  name: debug
+  namespace: default
+data:
+  cloudInit: |-
+    #cloud-config
+    password: password
+    ssh_pwauth: True
+    chpasswd: {expire: False}
+    resize_rootfs: true

@@ -1,0 +1,12 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  labels:
+    network.harvesterhci.io/clusternetwork: mgmt
+    network.harvesterhci.io/ready: "true"
+    network.harvesterhci.io/type: L2VlanNetwork
+    network.harvesterhci.io/vlan-id: "1"
+  name: mgmt-vlan100
+  namespace: default
+spec:
+  config: '{"cniVersion":"0.3.1","name":"workload","type":"bridge","bridge":"mgmt-br","promiscMode":true,"vlan":100,"ipam":{}}'

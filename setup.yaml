@@ -1,0 +1,17 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: setup-harvester-clusters
+  namespace: fleet-default
+spec:
+  branch: main
+  insecureSkipTLSVerify: false
+  paths:
+    - "/vmnetwork"
+    - "/vmimage"
+    - "/keypair"
+    - "/cloudinit"
+  repo: https://github.com/harvester/harvester-fleet-examples
+  targetNamespace: default
+  targets:
+    - clusterSelector: {} # please review clusterSelector to ensure correct set of clusters is targetted
